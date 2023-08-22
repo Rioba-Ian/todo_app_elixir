@@ -1,0 +1,14 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:name]} type="text" label="Name" />
+
+  <%!-- <label for="task_category_id">Category</label>
+  <.select field={f[:category_id]} options={@categories |> Enum.map(&{&1.name, &1.id})}></.select> --%>
+
+  <.input field={f[:completed]} type="checkbox" label="Completed" />
+  <:actions>
+    <.button>Save Task</.button>
+  </:actions>
+</.simple_form>
